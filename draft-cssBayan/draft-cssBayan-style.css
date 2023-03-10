@@ -23,5 +23,13 @@ body {
     background-color: bisque;
     color: burlywood;
     border-radius: 5px;
+    margin-bottom: 10px;
+    text-transform: uppercase; /*сделаем все буквы большими*/
+
+}
+
+.tab-title {
+    padding: 10px 15px; /*не сработает если не сделать лабел блочным*/
+    display: flex; /*лабел стал блочным*/
 
 }
