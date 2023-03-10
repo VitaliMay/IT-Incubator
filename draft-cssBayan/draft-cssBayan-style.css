@@ -31,5 +31,6 @@ body {
 .tab-title {
     padding: 10px 15px; /*не сработает если не сделать лабел блочным*/
     display: flex; /*лабел стал блочным*/
+    justify-content: space-between;
 
 }
