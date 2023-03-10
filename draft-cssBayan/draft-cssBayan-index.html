@@ -11,7 +11,8 @@
     <div class="container">
         <div class="accordion">
             <div class="tab">
-                <input type="checkbox" id="tab1">
+                <!-- используя в инпуте checked сразу открываем содержимое -->
+                <input type="checkbox" id="tab1" checked>  
                 <label for="tab1" class="tab-title">Привет лабел 01</label>
                 <p class="tab-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores magnam ullam doloremque voluptatum! Quo maiores eum, ab provident aliquam assumenda quidem autem? Quas reprehenderit aspernatur mollitia beatae maiores dignissimos illo!
                 Mollitia saepe aspernatur numquam fugit! Asperiores distinctio vitae optio sunt rerum aspernatur nulla dolorem? Inventore, quo ex aspernatur quis at ut dolorem modi vitae velit asperiores dicta quia nulla rem.</p>
@@ -48,5 +49,50 @@
             </div>
         </div>
     </div>
+
+<!-- ************************************************************************ -->
+<!-- ************************************************************************ -->
+<!-- ************************************************************************ -->
+
+<ul class="accordion">
+    <li class="accordion_item">
+        <input type="radio" class="accordion_toggle" name="accordion-01" id="toggle-01" checked hidden>
+        <label class="accordion_trigger" for="toggle-01">Заголовок панели 1</label>
+        <div class="accordion_target">
+            <p>
+                Здесь размещаете любое содержание....
+            </p>
+        </div>
+    </li>
+    <li class="accordion_item">
+        <input type="radio" class="accordion_toggle" name="accordion-01" id="toggle-02" hidden>
+        <label class="accordion_trigger" for="toggle-02">Заголовок панели 2</label>
+        <div class="accordion_target">
+            <p>
+                Здесь размещаете любое содержание....
+            </p>
+        </div>
+    </li>
+    <li class="accordion_item">
+        <input type="radio" class="accordion_toggle" name="accordion-01" id="toggle-03" hidden>
+        <label class="accordion_trigger" for="toggle-03">Заголовок панели 3</label>
+        <div class="accordion_target">
+            <p>
+                Здесь размещаете любое содержание....
+            </p>
+        </div>
+    </li>
+    <li class="accordion_item">
+        <input type="radio" class="accordion_toggle" name="accordion-01" id="toggle-04" hidden>
+        <label class="accordion_trigger" for="toggle-04">Заголовок панели 4</label>
+        <div class="accordion_target">
+            <p>
+                Здесь размещаете любое содержание....
+            </p>
+        </div>
+    </li>
+</ul>
+
+
 </body>
 </html>
