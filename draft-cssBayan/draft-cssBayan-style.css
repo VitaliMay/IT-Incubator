@@ -1,0 +1,27 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+    background-color: antiquewhite;
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* скрываю текст и птичку, оставляю только заголовки лабел */
+.tab input,
+.tab-content {
+    display: none;
+}
+
+.tab {
+    /* background: ; */
+    background-color: bisque;
+    color: burlywood;
+    border-radius: 5px;
+
+}
