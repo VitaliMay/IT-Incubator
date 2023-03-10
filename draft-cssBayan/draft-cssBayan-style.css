@@ -34,4 +34,29 @@ body {
     justify-content: space-between;
     font-weight: bold;
 
+    position: relative;
+
+}
+
+.tab-title::after {
+    content: '+';
+}
+
+.tab-content {
+    padding: 10px 15px;
+}
+
+.tab :checked + .tab-title {
+    background-color: aliceblue;
+    color: brown;
+    border-radius: 5px;
+
+    }
+
+.tab :checked + .tab-title::after {
+    content: '-';
+}
+
+.tab :checked ~ .tab-content {
+    display: block;
 }
