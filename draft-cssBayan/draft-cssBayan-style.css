@@ -7,9 +7,116 @@ body {
     font-family: 'Arial', sans-serif;
 }
 
+.wrapper {
+  /* color: brown; */
+  color: burlywood;
+}
+
+.wrapper:hover {
+  border: red solid 2px;
+  /* color: #444; */
+  color: brown;
+  /* color: burlywood; */
+  /* cursor: pointer; */
+}
+
+/*************************************************************************************************************/
+/*************************************************************************************************************/
+/*************************************************************************************************************/
+
+.accordion_container {
+  max-width: 60vw;
+  margin: 0 auto;
+
+  color: burlywood; /*перенес настройки из wrapper */
+
+  border: green solid 2px;
+}
+
+.accordion_container:hover {
+  border: red solid 2px;
+  /* color: #444; */
+  color: brown;
+  /* color: burlywood; */
+  cursor: pointer;
+}
+
+/* скрываю текст и птичку, оставляю только заголовки лабел */
+.accordion_block input,
+.accordion-item_content {
+    display: none;
+}
+
+.accordion_block {
+  /* background: ; */
+  background-color: bisque;
+  /* color: burlywood; */
+  border-radius: 5px;
+  margin-bottom: 10px;
+ 
+  transition: all 0.8s ease 0s;
+
+
+}
+
+.accordion_block:hover {
+/*изменение размера по осям*/
+transform: scale(1.05, 1.05); 
+}
+
+.accordion-item_title {
+  padding: 10px 15px; /*не сработает если не сделать лабел блочным*/
+  display: flex; /*лабел стал блочным*/
+  justify-content: space-between;
+  font-weight: bold;
+
+  text-transform: uppercase; /*сделаем все буквы большими*/
+
+  position: relative;
+
+  cursor: pointer;
+
+}
+
+.accordion-item_title::after {
+  content: '+';
+}
+
+.accordion-item_content {
+  padding: 10px 15px;
+}
+
+.accordion_block :checked + .accordion-item_title {
+  background-color: aliceblue;
+  color: rgb(130, 34, 34);
+  border-radius: 5px;
+
+}
+
+.accordion_block :checked + .accordion-item_title::after {
+  content: '-';
+}
+
+.accordion_block :checked ~ .accordion-item_content {
+  display: block;
+}
+
+
+
+
+
+
+/*************************************************************************************************************/
+/*************************************************************************************************************/
+/*************************************************************************************************************/
+
+
+
 .container {
     max-width: 800px;
     margin: 0 auto;
+
+
 }
 
 /* скрываю текст и птичку, оставляю только заголовки лабел */
@@ -21,11 +128,18 @@ body {
 .tab {
     /* background: ; */
     background-color: bisque;
-    color: burlywood;
+    /* color: burlywood; */
     border-radius: 5px;
     margin-bottom: 10px;
-    text-transform: uppercase; /*сделаем все буквы большими*/
+   
+    transition: all 0.8s ease 0s;
 
+
+}
+
+.tab:hover {
+  /*изменение размера по осям*/
+  transform: scale(1.05, 1.05); 
 }
 
 .tab-title {
@@ -34,11 +148,24 @@ body {
     justify-content: space-between;
     font-weight: bold;
 
+    text-transform: uppercase; /*сделаем все буквы большими*/
+
     position: relative;
 
     cursor: pointer;
 
 }
+
+
+
+/* .container:hover {
+  color: #444;
+  border: green solid 2px;
+} */
+
+/* .tab-title:hover {
+    color: #444;
+} */
 
 .tab-title::after {
     content: '+';
@@ -48,12 +175,12 @@ body {
     padding: 10px 15px;
 }
 
-.tab :checked + .tab-title {
-    background-color: aliceblue;
-    color: brown;
-    border-radius: 5px;
+.tab :checked+.tab-title {
+  background-color: aliceblue;
+  color: rgb(130, 34, 34);
+  border-radius: 5px;
 
-    }
+}
 
 .tab :checked + .tab-title::after {
     content: '-';
@@ -69,7 +196,7 @@ body {
 /******************************************************************************************************/
 /******************************************************************************************************/
 
-.accordion {
+.accordion-block02 {
     margin: 0;
     margin-bottom: 1.5rem;
     padding: 0;
@@ -150,3 +277,129 @@ body {
       from { opacity: 0; }
   to { opacity: 1 }
   }
+
+
+  /*******************************************************************************************************/
+  /*******************************************************************************************************/
+  /*******************************************************************************************************/
+
+  .accordion-block02{
+    /* ширина в % для резинового макета, 
+    * можно определить фиксированное
+    * значение в px 
+    */
+    width: 100%;
+    max-width: 1000px;
+    padding: 0;
+    margin: 0 auto;
+  }
+  .toggle-box {
+    /* по умаолчанию скрыт */
+    display: none;
+  }
+   
+  /* формируем внешний вид панелей аккордеона */
+   
+  .toggle-box + label { 
+    background: #6c6e74;
+    background: -moz-linear-gradient(top,  #6c6e74 0%, #4b4d51 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#6c6e74), color-stop(100%,#4b4d51));
+    background: -webkit-linear-gradient(top,  #6c6e74 0%,#4b4d51 100%);
+    background: -o-linear-gradient(top,  #6c6e74 0%,#4b4d51 100%);
+    background: -ms-linear-gradient(top,  #6c6e74 0%,#4b4d51 100%);
+    background: linear-gradient(top,  #6c6e74 0%,#4b4d51 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6c6e74', endColorstr='#4b4d51',GradientType=0 ); 
+    color: #C9C9C9;
+    cursor: pointer;
+    display: block;
+    font: normal 14px Helvetica, Arial, sans-serif;
+    line-height: 21px;
+    padding: 8px 22px; 
+    margin-bottom: 0px;
+  }
+
+  label a, a:hover{color: #ddd;}
+  
+  /* формируем внешний вид панелей при наведении */
+   
+  .toggle-box + label:hover{opacity: 0.9;} 
+   
+  /* формируем внешний вид панелей при нажатии на них */
+   
+  .toggle-box + label:active{
+    background: #6c6e74;
+    background: -moz-linear-gradient(top,  #6c6e74 0%, #545359 11%, #756d73 84%, #4b4d51 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#6c6e74), color-stop(11%,#545359), color-stop(84%,#756d73), color-stop(100%,#4b4d51));
+    background: -webkit-linear-gradient(top,  #6c6e74 0%,#545359 11%,#756d73 84%,#4b4d51 100%);
+    background: -o-linear-gradient(top,  #6c6e74 0%,#545359 11%,#756d73 84%,#4b4d51 100%);
+    background: -ms-linear-gradient(top,  #6c6e74 0%,#545359 11%,#756d73 84%,#4b4d51 100%);
+    background: linear-gradient(to bottom,  #6c6e74 0%,#545359 11%,#756d73 84%,#4b4d51 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#545359', endColorstr='#4b4d51',GradientType=0 );    
+  }
+   
+  /* содержание блоков скрыто */
+   
+  .toggle-box + label + div {
+    display: none;
+  }
+   
+  /* при обработке флажка (checkbox) показываем блок с содержанием */
+   
+  .toggle-box:checked + label + div {
+    display: block;
+  }
+
+/* формируем внешний вид кнопки переключателя на панели справа */
+ 
+.toggle-box + label:before {
+    background: #404247;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    color: #C9C9C9;
+    content: "+";
+    display: block;
+    float: right;
+    font-size: 14px;
+    font-weight: bold; 
+    height: 18px;
+    line-height: 18px;
+    margin: 2px 5px 0px;
+    text-align: center;
+    width: 18px;
+    box-shadow: inset 1px 1px 1px rgba(0,0,0, .2), 1px 1px 1px rgba(255,255,255, .1); 
+    -moz-box-shadow: inset 1px 1px 1px rgba(0,0,0, .2), 1px 1px 1px rgba(255,255,255, .1); 
+    -webkit-box-shadow: inset 1px 1px 1px rgba(0,0,0, .2), 1px 1px 1px rgba(255,255,255, .1);
+  }
+  .toggle-box:checked + label:before {
+    content: "\2212";
+  }
+   
+  /* оформляем блок с содержанием */
+   
+  .box{
+    background: #fefefe;
+    border-left: rgba(0,0,0,0.1) solid 1px;
+    border-right: rgba(0,0,0,0.1) solid 1px;
+    border-bottom: rgba(0,0,0,0.1) solid 1px;
+    padding: 10px 10px 10px;
+    font: 14px Helvetica, Arial, sans-serif;
+    color: #333;
+    line-height: 1.5;
+  }
+   
+  /* значения встраиваемых картинок в блоки */
+   
+  .box img{
+    height: auto;
+    border: rgba(0,0,0,0.3) solid 1px;
+  }
+  .left-img{  
+    float: left; 
+    margin: 5px 10px 0px 0px;
+  }
+  .right-img{
+    float: right; 
+    margin: 5px 0 0 10px;
+  }
+  .large-img {width: 100%;margin-bottom: 5px;}
