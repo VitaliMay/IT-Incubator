@@ -1,10 +1,4 @@
 
-// const test = `
-//     Проверка подключения
-//     `;
-// console.log(test);
-
-
 const playBtn = document.querySelector('.btn--play');
 const prevBtn = document.querySelector('.btn--prev');
 const nextBtn = document.querySelector('.btn--next');
