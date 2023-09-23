@@ -1,0 +1,131 @@
+
+
+
+/******** global *****************************************************/
+/**************************************************************/
+/* сбрасываю, то что может мешать */
+
+*,
+*::after,
+*::before{
+  box-sizing: inherit;
+}
+
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+body,
+h1,h2,h3,h4,h5,h6,
+p,
+ul,ol,li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+ul[class] {
+  list-style: none;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+a{
+  text-decoration: none;
+  /*чтобы наследовали цвет родителя*/
+  color: inherit;
+}
+
+button {
+  border: none;
+  outline: none; /*убираю фокус*/
+  background: none;
+  appearance: none; /* Removes platform-specific styling */
+  color: inherit;
+  
+  border: solid 2px blue; /*чтобы увидеть кнопку*/
+}
+
+/***************************************************************/
+/***************************************************************/
+
+@font-face {
+  font-family: 'Roboto';
+  src: url("../assets/fonts/Roboto-Regular.ttf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url("../assets/fonts/Roboto-Bold.ttf");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url("../assets/fonts/Roboto-Italic.ttf");
+  font-weight: 500;
+}
+
+/***************************************************************/
+/***************************************************************/
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+
+  font-size: 10px;
+}
+
+/* чтобы прижать футер к низу страницы*/
+// html,
+// body {
+// 	height: 100%;
+// }
+
+/*! чтобы всегда была полоса прокрутки и не дергалось при пиксель перфект. 
+Надо убрать для мобилок*/
+
+html {
+	height: 100.1%;
+}
+
+body {
+	height: 100%;
+}
+
+
+
+/* чтобы прижать футер к низу страницы*/
+/* чтобы не появлялась полоса прокрутки при пиксель перфект надо
+что-то помутить с медиа запросам*/
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	//min-height: 100%;
+	min-height: 100vh;
+
+}
+
+/* чтобы прижать футер к низу страницы*/
+.main {
+	// flex: 1 0 auto;
+  flex-grow: 1;
+}
+.footer {
+	flex: 0 0 auto;
+}
+
+
+
+
+
