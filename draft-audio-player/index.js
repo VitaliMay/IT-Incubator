@@ -43,7 +43,6 @@ function playAudio() {
 
   // playBtn.classList.toggle('pause');
 
-  // console.log(playBtn.classList.contains('pause'))
 
   if (!isPlay) {
     isPlay = true;
