@@ -6,3 +6,5 @@ https://VitaliMay.github.io/IT-Incubator/draft-cssBayan/draft-cssBayan-index.htm
 И снова на этом ВСЁ
 
 Проверка не забыл ли как работают коммиты))
+
+Почти забыл лучше проверить)
