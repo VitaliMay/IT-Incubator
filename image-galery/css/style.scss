@@ -1,0 +1,357 @@
+// @import 'normalize';
+
+@import 'global';
+
+
+/***********************************************/
+/***********************************************/
+
+
+// body {
+//   background: #0C0C0E;
+// }
+
+.wrapper {
+  margin: 0 auto;
+
+  // background-image: url(../assets/img/lemonade.png);
+  background-image: url(../assets/img/Lzy-cover02.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  // backdrop-filter: blur(50px);
+
+  // filter: blur(10px);
+  transition: all 0.7s;
+
+  font-family: 'Roboto';
+  font-size: 12px;
+  font-weight: 700;
+
+  color: rgb(255, 255, 255);
+}
+
+
+.main {
+  width: 100%;
+  height: 100%;
+
+  padding: 20px;
+
+  // накладываю на wrapper заблюренную картинку
+  backdrop-filter: blur(10px);
+
+  display: flex;
+  // flex-direction: column;
+  justify-content: center;
+  // align-items: center;
+
+  row-gap: 20px;
+  column-gap: 20px;
+  flex-wrap: wrap;
+}
+
+
+/**********************************************/
+/**********************************************/
+/****** Сохраняю пропорции блока с картинкой ****************************************/
+
+.cover {
+  width: 100%; /* здесь можно установить любую нужную ширину */
+  max-width: 300px;
+
+  transform: scale(1);
+  transition: all 0.7s;
+
+  &:hover {
+    transform: scale(1.05);
+    transition: all 0.7s;
+  }
+  &:active {
+    transform: scale(0.9);
+    transition: all 0.7s;
+  }
+}
+
+.cover-inner {
+  position: relative;
+  height: 0;
+  border: none;
+}
+
+/****Спинер**************************************/
+/****так и не придумал как заставить его работать для фоновых картинок******/
+
+.spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  animation: spin 2s linear infinite;
+  z-index: 9999;
+}
+
+@keyframes spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/************************************************/
+
+.cover-content {
+  transition: all 0.7s;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  // background: #eee;
+
+  // background-image: url(../assets/img/Lzy-cover02.jpg);
+  // background-position: center;
+  background-position: top;
+  // background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  border-radius: 5px;
+
+  // border: solid 2px green;
+  box-shadow: 10px 10px 40px -2px rgba(0, 0, 0, 0.25);
+}
+
+/******* Тест ****************************************/
+
+// .cover-content--0 {
+//   background-image: url(../assets/img/Lzy-cover02.jpg);
+// }
+// .cover-content--1 {
+//   background-image: url(../assets/svg/GR_favicon.ico);
+// }
+// .cover-content--2 {
+//   background-image: url(../assets/svg/rs_school_js.svg);
+// }
+// .cover-content--3 {
+//   background-image: url(../assets/svg/search_icon_252091.svg);
+// }
+
+/*************************************************************/
+
+.cover-inner--ratio {  // устанавливаю пропорции изображения 3/4
+  padding-top: 75%; /* 100% ширины делим на 4 и умножаем на 3 */
+}
+
+
+
+
+/***********************************************/
+/***********************************************************/
+
+.footer {
+  background-color: rgb(80, 80, 80);
+  box-shadow: 10px 10px 40px -2px rgba(0, 0, 0, 0.25);
+
+  font-family: 'Roboto';
+  font-size: 12px;
+  font-weight: 700;
+  color: rgb(255, 255, 255);
+
+  opacity: 0.8;
+}
+
+.footer-container {
+
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1230px;
+  // max-width: 600px;
+  // max-width: 1440px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+
+}
+
+.github-visit {  // закоментировано в html
+  margin-left: 10px;
+}
+
+.footer-container__github {
+  display: flex;
+  align-items: center;
+}
+
+.footer-container__github:hover{
+  text-decoration: underline;
+}
+
+.footer-link {
+  transition: 0.3s;
+  opacity: 70%;
+}
+
+.footer-link:hover {
+  transform: scale(1.2);
+  opacity: 100%;
+}
+
+.footer-container__copy {
+  color: rgb(0, 0, 0);
+  margin-left: 25px;
+}
+
+
+/*********************************************************/
+/*********************************************************/
+.header {
+  // backdrop-filter: blur(10px);
+  position: relative;
+
+  background-color: rgb(80, 80, 80);
+  box-shadow: 10px 10px 40px -2px rgba(0, 0, 0, 0.25);
+
+  font-family: 'Roboto';
+  font-size: 20px;
+  font-weight: 700;
+  // color: rgb(255, 255, 255);
+
+  opacity: 0.8;
+}
+
+.title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  opacity: 0.1;
+  cursor: default;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1230px;
+  margin: 0 auto;
+
+  // border: solid red 2px;
+  padding: 0 15px;
+
+  column-gap: 15px;
+  flex-wrap: wrap;
+}
+
+.header-form {
+  display: flex;
+  // justify-content: space-between;
+  // position: relative;
+  align-items: center;
+  // background-color: aqua;
+  // width: 100%;
+  // max-width: 800px;
+  // max-width: 1230px;
+  // padding-right: 15px;
+  // margin: 0 auto;
+  justify-content: end;
+}
+
+.header-select {
+  background-color: inherit;
+  margin-top: 10px;
+
+  border-radius: 5px;
+}
+
+
+.header-div {
+  display: flex;
+  border: 4px solid rgb(60, 60, 60);
+  margin: 10px 5px 10px 0;
+  padding: 0 5px 0 5px;
+  border-radius: 10px;
+
+  box-sizing: border-box;
+
+  background-color: antiquewhite;
+
+  // opacity: 0.6;
+}
+
+.header-div:hover {
+  border: 4px solid rgb(101, 101, 101);
+}
+
+.header-div:focus-within { // работает при фокусе на дочернем элементе
+  border: 4px solid rgb(40, 40, 40); 
+}
+
+
+.header-input__text {
+  width: 200px;
+  height: 50px;
+
+  background-color: transparent;
+  outline: none;
+  border: none;
+  // border: 2px solid red;
+  // border-width: 2px 0 2px 2px;
+}
+
+.header-input__clear {
+  padding: 5px;
+  background-color: transparent;
+  outline: none;
+
+  visibility: hidden;
+  opacity: 0;
+  width: 22px;
+  height: 50px;
+  background-image: url(../assets/svg/Delete-80_icon-icons.com_57340.png); /*изображение крестика */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  cursor: pointer;
+  transition: all 2s;
+
+}
+
+.header-input__submit {
+  background-color: transparent;
+  outline: none;
+  border: none;
+
+  width: 32px;
+  height: 50px;
+  // background-image: url(../assets/svg/search_icon_252091.svg);
+  background-image: url(../assets/svg/search_icon_252091.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  cursor: pointer;
+
+  transform: scale(1);
+  transition: all 0.3s;
+
+  &:hover {
+    transform: scale(1.05);
+    transition: all 0.3s;
+  }
+  &:active {
+    transform: scale(0.9);
+    transition: all 0.3s;
+  }
+}
+
+
+
+
+
