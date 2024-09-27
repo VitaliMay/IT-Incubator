@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image-galery VitaliMay</title>
+	<link href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Forum:regular" rel="stylesheet">
+	<link rel="stylesheet" href="./css/normalize.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="icon" href="./assets/svg/GR_favicon.ico">
+	<!-- <script defer type="module" src="./js/index.js"></script> -->
+</head>
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<h1 class="title">Unsplash&nbsp;API</h1>
+			<div class="header-container">
+				<select class="header-select">
+					<option class="option" value="en" selected>Main search language English</option>
+					<option class="option" value="ru">Основной язык поиска Русский</option>
+				</select>
+	
+				<form class="header-form">
+					<div class="header-div">
+						<input class="header-input header-input__text" type="text" placeholder="Search..." autofocus autocomplete="off">
+						<span class="header-input__clear"></span>
+					</div>
+					<!-- Чтобы фокус установился как можно скорее не дожидаясь пока сработает window.onload-->
+					<script>
+						document.querySelector(".header-input__text").focus();
+					</script>
+					<input class="header-input header-input__submit" type="submit" name="input-submit" value="">
+				</form>
+			</div>
+
+		</header>
+
+		<main class="main">
+
+		</main>
+
+		<footer class="footer">
+
+			<div class="footer-container">
+
+				<a class="footer-container__github" target="_blank" href="https://github.com/VitaliMay">
+					<img class="footer-link" src="./assets/svg/github.svg" alt="Github Icon" height="35">
+					<!-- <p class="github-visit">Visit my GitHub</p> -->
+				</a>
+				<p class="footer-container__copy">&copy; 2023</p>
+				<a target="_blank" href="https://rs.school/js-stage0/">
+					<img class="footer-link" src="./assets/svg/rs_school_js.svg" alt="Rsschool Icon" height="25">
+				</a>
+
+			</div>
+
+		</footer>
+
+	</div>
+	<script type="module" src="./js/index.js"></script>
+</body>
+</html>
